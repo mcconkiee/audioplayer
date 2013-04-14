@@ -21,6 +21,8 @@
 		5D507263171A01500071E380 /* sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5D507262171A01500071E380 /* sample.m4a */; };
 		5D507267171A017D0071E380 /* EMAudioUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D507266171A017D0071E380 /* EMAudioUtility.m */; };
 		5D507269171A018D0071E380 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D507268171A018D0071E380 /* AVFoundation.framework */; };
+		5D50726B171B4E240071E380 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D50726A171B4E240071E380 /* MediaPlayer.framework */; };
+		5D50726D171B4EE50071E380 /* artwork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5D50726C171B4EE50071E380 /* artwork.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		5D507265171A017D0071E380 /* EMAudioUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAudioUtility.h; sourceTree = "<group>"; };
 		5D507266171A017D0071E380 /* EMAudioUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAudioUtility.m; sourceTree = "<group>"; };
 		5D507268171A018D0071E380 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5D50726A171B4E240071E380 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		5D50726C171B4EE50071E380 /* artwork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = artwork.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D50726B171B4E240071E380 /* MediaPlayer.framework in Frameworks */,
 				5D507269171A018D0071E380 /* AVFoundation.framework in Frameworks */,
 				5D507240171A012F0071E380 /* UIKit.framework in Frameworks */,
 				5D507242171A012F0071E380 /* Foundation.framework in Frameworks */,
@@ -64,7 +69,7 @@
 		5D507233171A012F0071E380 = {
 			isa = PBXGroup;
 			children = (
-				5D507268171A018D0071E380 /* AVFoundation.framework */,
+				5D50726A171B4E240071E380 /* MediaPlayer.framework */,
 				5D507245171A012F0071E380 /* AudioPlayerTest */,
 				5D50723E171A012F0071E380 /* Frameworks */,
 				5D50723D171A012F0071E380 /* Products */,
@@ -82,6 +87,7 @@
 		5D50723E171A012F0071E380 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D507268171A018D0071E380 /* AVFoundation.framework */,
 				5D50723F171A012F0071E380 /* UIKit.framework */,
 				5D507241171A012F0071E380 /* Foundation.framework */,
 				5D507243171A012F0071E380 /* CoreGraphics.framework */,
@@ -106,6 +112,7 @@
 		5D507246171A012F0071E380 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D50726C171B4EE50071E380 /* artwork.jpg */,
 				5D507262171A01500071E380 /* sample.m4a */,
 				5D507247171A012F0071E380 /* AudioPlayerTest-Info.plist */,
 				5D507248171A012F0071E380 /* InfoPlist.strings */,
@@ -184,6 +191,7 @@
 				5D507256171A012F0071E380 /* Default-568h@2x.png in Resources */,
 				5D50725C171A012F0071E380 /* ViewController.xib in Resources */,
 				5D507263171A01500071E380 /* sample.m4a in Resources */,
+				5D50726D171B4EE50071E380 /* artwork.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +290,15 @@
 		5D507260171A012F0071E380 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eric McConkie (WN5J722HHS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Eric McConkie (WN5J722HHS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AudioPlayerTest/AudioPlayerTest-Prefix.pch";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "AudioPlayerTest/AudioPlayerTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "417F0CF0-D71B-4724-80CE-23E35589AFD3";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "417F0CF0-D71B-4724-80CE-23E35589AFD3";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -322,6 +334,7 @@
 				5D507261171A012F0071E380 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

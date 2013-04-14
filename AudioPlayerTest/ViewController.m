@@ -8,6 +8,10 @@
 
 #import "ViewController.h"
 #import "EMAudioUtility.h"
+
+#import <MediaPlayer/MPNowPlayingInfoCenter.h>
+#import <MediaPlayer/MPMediaItem.h>
+
 @interface ViewController ()
 @property (nonatomic,retain)EMAudioUtility *audioUtil;
 @property (nonatomic,retain)NSTimer *timer;
@@ -95,6 +99,27 @@
     NSString *sample = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"m4a"];
     [self.audioUtil play:sample];
     [self onVolume:self.sliderVolume];
+    
+    //artwork
+    Class playingInfoCenter = NSClassFromString(@"MPNowPlayingInfoCenter");
+    
+    if (playingInfoCenter) {
+        
+        
+        NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
+        
+        
+        UIImage *artwork = [UIImage imageNamed:@"artwork.jpg"];
+        MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage:artwork ];
+        
+        [songInfo setObject:@"Audio Title" forKey:MPMediaItemPropertyTitle];
+        [songInfo setObject:@"Audio Author" forKey:MPMediaItemPropertyArtist];
+        [songInfo setObject:@"Audio Album" forKey:MPMediaItemPropertyAlbumTitle];
+        [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+        [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
+        
+        
+    }
 }
 - (IBAction)onPause:(id)sender {
     [self.audioUtil pause];

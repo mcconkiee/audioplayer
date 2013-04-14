@@ -68,6 +68,13 @@
     NSURL *url = [NSURL fileURLWithPath:pathToContentFile];    
     NSError *error = nil;
     AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+    
+    //preprare the session, and allow for background
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    
     [player setNumberOfLoops:0];//playonce
     [player setDelegate:self];
     [self setAudioPlayer:player];
