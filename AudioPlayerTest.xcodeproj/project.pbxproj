@@ -18,6 +18,9 @@
 		5D507256171A012F0071E380 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D507255171A012F0071E380 /* Default-568h@2x.png */; };
 		5D507259171A012F0071E380 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D507258171A012F0071E380 /* ViewController.m */; };
 		5D50725C171A012F0071E380 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D50725A171A012F0071E380 /* ViewController.xib */; };
+		5D507263171A01500071E380 /* sample.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5D507262171A01500071E380 /* sample.m4a */; };
+		5D507267171A017D0071E380 /* EMAudioUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D507266171A017D0071E380 /* EMAudioUtility.m */; };
+		5D507269171A018D0071E380 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D507268171A018D0071E380 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,10 @@
 		5D507257171A012F0071E380 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5D507258171A012F0071E380 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5D50725B171A012F0071E380 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		5D507262171A01500071E380 /* sample.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample.m4a; sourceTree = "<group>"; };
+		5D507265171A017D0071E380 /* EMAudioUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMAudioUtility.h; sourceTree = "<group>"; };
+		5D507266171A017D0071E380 /* EMAudioUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMAudioUtility.m; sourceTree = "<group>"; };
+		5D507268171A018D0071E380 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D507269171A018D0071E380 /* AVFoundation.framework in Frameworks */,
 				5D507240171A012F0071E380 /* UIKit.framework in Frameworks */,
 				5D507242171A012F0071E380 /* Foundation.framework in Frameworks */,
 				5D507244171A012F0071E380 /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +64,7 @@
 		5D507233171A012F0071E380 = {
 			isa = PBXGroup;
 			children = (
+				5D507268171A018D0071E380 /* AVFoundation.framework */,
 				5D507245171A012F0071E380 /* AudioPlayerTest */,
 				5D50723E171A012F0071E380 /* Frameworks */,
 				5D50723D171A012F0071E380 /* Products */,
@@ -83,6 +92,7 @@
 		5D507245171A012F0071E380 /* AudioPlayerTest */ = {
 			isa = PBXGroup;
 			children = (
+				5D507264171A016A0071E380 /* audio utility */,
 				5D50724E171A012F0071E380 /* AppDelegate.h */,
 				5D50724F171A012F0071E380 /* AppDelegate.m */,
 				5D507257171A012F0071E380 /* ViewController.h */,
@@ -96,6 +106,7 @@
 		5D507246171A012F0071E380 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D507262171A01500071E380 /* sample.m4a */,
 				5D507247171A012F0071E380 /* AudioPlayerTest-Info.plist */,
 				5D507248171A012F0071E380 /* InfoPlist.strings */,
 				5D50724B171A012F0071E380 /* main.m */,
@@ -105,6 +116,15 @@
 				5D507255171A012F0071E380 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5D507264171A016A0071E380 /* audio utility */ = {
+			isa = PBXGroup;
+			children = (
+				5D507265171A017D0071E380 /* EMAudioUtility.h */,
+				5D507266171A017D0071E380 /* EMAudioUtility.m */,
+			);
+			name = "audio utility";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +183,7 @@
 				5D507254171A012F0071E380 /* Default@2x.png in Resources */,
 				5D507256171A012F0071E380 /* Default-568h@2x.png in Resources */,
 				5D50725C171A012F0071E380 /* ViewController.xib in Resources */,
+				5D507263171A01500071E380 /* sample.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +197,7 @@
 				5D50724C171A012F0071E380 /* main.m in Sources */,
 				5D507250171A012F0071E380 /* AppDelegate.m in Sources */,
 				5D507259171A012F0071E380 /* ViewController.m in Sources */,
+				5D507267171A017D0071E380 /* EMAudioUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +284,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AudioPlayerTest/AudioPlayerTest-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "AudioPlayerTest/AudioPlayerTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -273,6 +296,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AudioPlayerTest/AudioPlayerTest-Prefix.pch";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "AudioPlayerTest/AudioPlayerTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
