@@ -8,8 +8,9 @@
 
 #import "EMAudioUtility.h"
 
-@interface EMAudioUtility()
 
+@interface EMAudioUtility()
+@property (nonatomic,retain)AVURLAsset *avAsset;
 @end
 
 @implementation EMAudioUtility
@@ -63,9 +64,9 @@
     [self removeObserver:self forKeyPath:@"audioUtilityState"];
 }
 
--(void)play:(NSString*)pathToContentFile
+-(void)play:(NSURL*)url
 {
-    NSURL *url = [NSURL fileURLWithPath:pathToContentFile];    
+    self.audioPlayerType = AudioPlayerTypeLocalPlayback;
     NSError *error = nil;
     AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     
@@ -89,23 +90,58 @@
     
 }
 
+-(void)stream:(NSURL*)url
+{
+    self.audioPlayerType = AudioPlayerTypeRemoteStream;
+    self.avAsset = [AVURLAsset URLAssetWithURL:url options:nil];
+    self.playerItem = [AVPlayerItem playerItemWithAsset:self.avAsset];
+    self.httpPlayer = [AVPlayer playerWithPlayerItem:self.playerItem];
+    [self.httpPlayer play];
+    [self setAudioUtilityState:AudioUtilityStateTypePlaying];
+}
+
 -(void)scrubTo:(float)zeroToOne
 {
+    if (self.audioPlayerType == AudioPlayerTypeLocalPlayback) {
+        
+    }
+    
+    switch (self.audioPlayerType) {
+        case AudioPlayerTypeLocalPlayback:
+        {
+            NSTimeInterval dur = self.audioPlayer.duration;
+            double newSeekTime = (zeroToOne ) * dur;
+            [self.audioPlayer setCurrentTime:(int)newSeekTime];
+        }
+            break;
+        case AudioPlayerTypeRemoteStream:
+        {
+            CMTime dur = self.playerItem.duration;
+            int duration = CMTimeGetSeconds(dur);
+            double time = duration * zeroToOne ;
 
-    NSTimeInterval dur = self.audioPlayer.duration;
-    double newSeekTime = (zeroToOne ) * dur;
-    [self.audioPlayer setCurrentTime:(int)newSeekTime];
+
+            [self.httpPlayer seekToTime:CMTimeMake(time, 1)];
+        }
+            break;
+        default:
+            break;
+    }
+        
+
 }
 
 -(void)pause
 {
     if (self.audioUtilityState == AudioUtilityStateTypePlaying) {
-        [self setAudioUtilityState:AudioUtilityStateTypePaused];    
+        [self setAudioUtilityState:AudioUtilityStateTypePaused];
         [self.audioPlayer pause];
+        [self.httpPlayer pause];
     }else
     {
         [self setAudioUtilityState:AudioUtilityStateTypePlaying];
         [self.audioPlayer play];
+        [self.httpPlayer play];
     }
     
     
@@ -116,6 +152,7 @@
     [self.audioPlayer stop];
     [self setAudioUtilityState:AudioUtilityStateTypeStopped];    
 }
+
 
 #pragma mark -------------->>audio delegate
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
@@ -128,4 +165,7 @@
 {
     
 }
+
+
+
 @end

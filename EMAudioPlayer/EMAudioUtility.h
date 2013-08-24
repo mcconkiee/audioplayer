@@ -17,12 +17,22 @@ typedef enum {
     AudioUtilityStateTypeFinished
 }AudioUtilityStateType;
 
+
+typedef enum {
+    AudioPlayerTypeUndefined,
+    AudioPlayerTypeLocalPlayback,
+    AudioPlayerTypeRemoteStream
+}AudioPlayerType;
+
 @interface EMAudioUtility : NSObject<AVAudioPlayerDelegate>
 @property (nonatomic,retain)AVAudioPlayer *audioPlayer;
+@property (nonatomic,retain)AVPlayer *httpPlayer;
+@property (nonatomic,retain)AVPlayerItem *playerItem;
 @property (nonatomic)AudioUtilityStateType audioUtilityState;
-
--(void)play:(NSString*)pathToContentFile;
+@property (nonatomic)AudioPlayerType audioPlayerType;
+-(void)play:(NSURL*)pathToContentFile;
+-(void)stream:(NSURL*)url;
 -(void)scrubTo:(float)zeroToOne;
--(void)pause;
+-(void)pause;//will toggle play<->pause
 -(void)stop;
 @end

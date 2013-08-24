@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EMAudioObject.h"
 
-@interface ViewController : UIViewController
+@interface EMAudioPlayerViewController : UIViewController
+@property (nonatomic,strong) EMAudioObject *audioObject;
 @property (weak, nonatomic) IBOutlet UIButton *btnPause;
-
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UISlider *sliderScrub;
 @property (weak, nonatomic) IBOutlet UISlider *sliderVolume;
+
+-(void)play;
+-(void)stream;
+-(void)pause;
+
+
 @end

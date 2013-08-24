@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D50723B171A012F0071E380"
-               BuildableName = "AudioPlayerTest.app"
-               BlueprintName = "AudioPlayerTest"
-               ReferencedContainer = "container:AudioPlayerTest.xcodeproj">
+               BuildableName = "EMAudioPlayer.app"
+               BlueprintName = "EMAudioPlayer"
+               ReferencedContainer = "container:EMAudioPlayer.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D50723B171A012F0071E380"
-            BuildableName = "AudioPlayerTest.app"
-            BlueprintName = "AudioPlayerTest"
-            ReferencedContainer = "container:AudioPlayerTest.xcodeproj">
+            BuildableName = "EMAudioPlayer.app"
+            BlueprintName = "EMAudioPlayer"
+            ReferencedContainer = "container:EMAudioPlayer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D50723B171A012F0071E380"
-            BuildableName = "AudioPlayerTest.app"
-            BlueprintName = "AudioPlayerTest"
-            ReferencedContainer = "container:AudioPlayerTest.xcodeproj">
+            BuildableName = "EMAudioPlayer.app"
+            BlueprintName = "EMAudioPlayer"
+            ReferencedContainer = "container:EMAudioPlayer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D50723B171A012F0071E380"
-            BuildableName = "AudioPlayerTest.app"
-            BlueprintName = "AudioPlayerTest"
-            ReferencedContainer = "container:AudioPlayerTest.xcodeproj">
+            BuildableName = "EMAudioPlayer.app"
+            BlueprintName = "EMAudioPlayer"
+            ReferencedContainer = "container:EMAudioPlayer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
