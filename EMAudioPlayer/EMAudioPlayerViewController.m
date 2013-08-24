@@ -10,7 +10,6 @@
 #import "EMAudioUtility.h"
 #import <AVFoundation/AVFoundation.h>
 
-
 @interface EMAudioPlayerViewController ()
 @property (nonatomic,retain)EMAudioUtility *audioUtil;
 @property (nonatomic,retain)NSTimer *timer;
@@ -33,8 +32,7 @@
     [[AVAudioSession sharedInstance] setCategory: AVAudioSessionCategoryPlayback error: &setCategoryErr];
     [[AVAudioSession sharedInstance] setActive: YES error: &activationErr];
     
-    
-    
+
     [self.sliderScrub addTarget:self action:@selector(onScrubComplete:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
     
     [self.sliderVolume setValue:0.5];
@@ -103,7 +101,6 @@
 {
     [self removeObserver:self forKeyPath:@"audioUtil.audioUtilityState"];
 }
-
 
 -(void)startScrubPositionTimer
 {

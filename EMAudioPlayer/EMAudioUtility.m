@@ -8,7 +8,6 @@
 
 #import "EMAudioUtility.h"
 
-
 @interface EMAudioUtility()
 @property (nonatomic,retain)AVURLAsset *avAsset;
 @end
@@ -127,7 +126,6 @@
         default:
             break;
     }
-        
 
 }
 
@@ -153,7 +151,6 @@
     [self setAudioUtilityState:AudioUtilityStateTypeStopped];    
 }
 
-
 #pragma mark -------------->>audio delegate
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
@@ -165,7 +162,4 @@
 {
     
 }
-
-
-
 @end

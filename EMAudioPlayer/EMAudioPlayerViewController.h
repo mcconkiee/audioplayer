@@ -11,6 +11,7 @@
 
 @interface EMAudioPlayerViewController : UIViewController
 @property (nonatomic,strong) EMAudioObject *audioObject;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnPause;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 @property (weak, nonatomic) IBOutlet UISlider *sliderScrub;

@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+
 #import "EMAudioObject.h"
+
 #import "EMAudioPlayerViewController.h"
 
 @implementation AppDelegate
@@ -18,8 +20,7 @@
     // Override point for customization after application launch.
     self.viewController = [[EMAudioPlayerViewController alloc] initWithNibName:@"EMAudioPlayerViewController" bundle:nil];
     
-    
-    
+
     NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"m4a"];
     NSURL *url = [NSURL fileURLWithPath:path];
 //    NSURL *url = [NSURL URLWithString:@"http://path.to.a.remote.file"];
@@ -35,6 +36,7 @@
     [audioObject setUrlToAlbumArt:urlArt];
     
     [self.viewController setAudioObject:audioObject];
+
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
